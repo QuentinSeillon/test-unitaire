@@ -1,0 +1,17 @@
+{
+    "name": "quentin/gestion_produit",
+    "autoload": {
+        "psr-4": {
+            "Quentin\\GestionProduit\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "QuentinSeillon",
+            "email": "quentin.seillon@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^12.0"
+    }
+}
