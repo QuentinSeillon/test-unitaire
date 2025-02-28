@@ -29,7 +29,7 @@ class UserManagerTest extends TestCase
     {
         $this->userManager->addUser("John Doe", "john.doe@example.com");
         $users = $this->userManager->getUsers();
-        $this->assertCount(1, $users);
+        $this->assertCount(2, $users);
         $this->assertEquals("John Doe", $users[0]['name']);
         $this->assertEquals("john.doe@example.com", $users[0]['email']);
     }
@@ -80,6 +80,15 @@ class UserManagerTest extends TestCase
         $this->assertCount(2, $users);
         $this->assertEquals("John Doe", $users[0]['name']);
         $this->assertEquals("jane.doe@example.com", $users[1]['email']);
+    }
+
+    public function testGetUserById()
+    {
+        $this->userManager->addUser("John Doe", "john.doe@example.com");
+
+        $user = $this->userManager->getUser(1);
+
+        $this->assertEquals("John Doe", $user['name']);
     }
 
     public function testInvalidUpdateThrowsException(): void
